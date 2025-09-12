@@ -54,7 +54,7 @@
             text-align: center;
         }
 
-        #nameForm input {
+        #form input {
             padding: 10px;
             font-size: 18px;
             border-radius: 5px;
@@ -62,7 +62,7 @@
             margin-right: 10px;
         }
 
-        #nameForm button {
+        #form button {
             padding: 10px 20px;
             font-size: 18px;
             background-color: #8cc099;
@@ -72,7 +72,7 @@
             cursor: pointer;
         }
 
-        #hola {
+        #greeting {
             font-size: 30px;
             font-weight: 700;
             color: #c4975c;
@@ -83,30 +83,31 @@
 <body>
     <nav>
         <div class="heading">Landing Page</div>
-        <div class="navbar"><h1>Achmad</h1></div>
+        <div class="navbar"><h1>Achmad</h1>
+</div>
     </nav>
 
     <div class="Main">
-        <form id="nameForm">
-            <input type="text" id="nameInput" placeholder="Masukkan Nama Anda" required>
+        <form id="form">
+            <input type="text" id="nama" placeholder="Masukkan Nama Anda" required>
             <button type="submit">Kirim</button>
         </form>
-        <h1 id="hola"></h1>
+        <h1 id="greeting"></h1>
     </div>
 
     <script>
-        const form = document.getElementById("nameForm");
-        const nameInput = document.getElementById("nameInput");
-        const hola = document.getElementById("hola");
+        const form = document.getElementById("form");
+        const nama = document.getElementById("nama");
+        const greeting = document.getElementById("greeting");
 
         form.addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah reload
 
-            const name = nameInput.value.trim();
+            const name = nama.value.trim();
             if (name) {
                 form.style.display = "none"; // Sembunyikan form
-                hola.textContent = `Selamat Datang, ${name}`;
-                hola.style.display = "block";
+                greeting.textContent = `Selamat Datang, ${name}`;
+                greeting.style.display = "block";
             }
         });
     </script>
