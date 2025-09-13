@@ -83,8 +83,6 @@
 <body>
     <nav>
         <div class="heading">Landing Page</div>
-        <div class="navbar"><h1>Achmad</h1>
-</div>
     </nav>
 
     <div class="Main">
@@ -94,22 +92,21 @@
         </form>
         <h1 id="greeting"></h1>
     </div>
-
+</body>
     <script>
         const form = document.getElementById("form");
         const nama = document.getElementById("nama");
         const greeting = document.getElementById("greeting");
 
         form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Mencegah reload
+            event.preventDefault();
 
             const name = nama.value.trim();
             if (name) {
-                form.style.display = "none"; // Sembunyikan form
+                form.style.display = "none";
                 greeting.textContent = `Selamat Datang, ${name}`;
                 greeting.style.display = "block";
             }
         });
     </script>
-</body>
 </html>
